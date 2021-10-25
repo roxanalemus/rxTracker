@@ -1,6 +1,6 @@
 # rxTracker
 
-Keep track of the time you are prescribed to takr you medication and when you take them. 
+Keep track of the time you are prescribed to take your medication and when you take them. 
 
 <img src="public/images/rxTracker.png" width="100%">
 
