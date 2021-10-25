@@ -1,0 +1,16 @@
+body{
+  background: url("images/rxyellow.jpg");
+  background-repeat: no-repeat;
+  background-size: cover cover;
+}
+
+h3{
+  margin-top: 40px;
+}
+
+button{
+  background-color: lightblue;
+  border: 2px lightblue;
+  border-radius: 12px;
+
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rx Tracker</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Rx Tracker</h1>
+  <h2>Keep track of your daily meds</h2>
+
+  <h3>Daily Meds List</h3>
+  <ul class="messages">
+  <% for(var i=0; i<Rx.length; i++) {%>
+    <li class="message">
+      <!-- coming from database to dom -->
+      <span><%= Rx[i].timeToTake %> | </span>
+      <span><%= Rx[i].med %> | </span>
+      <span><%= Rx[i].dose %> | </span>
+      <span><em>Time taken:</em></span>
+      <!-- <form action="/recordTaken" method="post"> -->
+      <input type="time" name="timeTaken" class="timeTakenInput"></input>
+      <button type="submit" class="recordButton" value="<%= Rx[i]._id %>">Record I've taken my meds!</button>
+      <!-- </form> -->
+      <span><%= Rx[i].timeTaken %></span>
+      <button value="<%= Rx[i]._id %>" class="fa fa-trash"></button>
+    </li>
+  <% } %>
+  </ul>
+
+  <h2>Add a medication</h2>
+
+  <form action="/medicine" method="POST">
+    <input type="text" placeholder="time of day" name="timeToTake">
+    <input type="text" placeholder="medication" name="med">
+    <input type="text" placeholder="dosage" name="dose">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
